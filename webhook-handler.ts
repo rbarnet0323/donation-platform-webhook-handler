@@ -18,7 +18,7 @@ const handler = async (req) => {
       const body = {
         data: {
           amount: parseFloat((session.amount_total / 100).toFixed(2)),
-          user: session.metadata.userID,
+          user: session.metadata.username,
           donor: session.customer_details.email,
           stripeID: stripeID,
         },
