@@ -13,7 +13,7 @@ const handler = async (req) => {
     const url = new URL(req.url);
     if (url.pathname == "/stripe") {
       const res = await req.json();
-      const stripeID = res.id;
+      const stripeID = res.data.object.id;
       session = await stripe.checkout.sessions.retrieve(stripeID);
       const body = {
         data: {
